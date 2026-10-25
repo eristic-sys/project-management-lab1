@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProjectManagementSystem>
+    <Employees>
+        <Employee id="1">
+            <Name>Алексей Смирнов</Name>
+            <Position>Senior Developer</Position>
+        </Employee>
+        <Employee id="2">
+            <Name>Елена Васильева</Name>
+            <Position>Project Manager</Position>
+        </Employee>
+    </Employees>
+
+    <Clients>
+        <Client id="1">
+            <Name>TechCorp LLC</Name>
+            <Company>ООО ТехКорп</Company>
+        </Client>
+        <Client id="2">
+            <Name>Global Solutions</Name>
+            <Company>АО Глобал Солюшнс</Company>
+        </Client>
+    </Clients>
+
+    <Projects>
+        <Project id="101">
+            <Title>Разработка корпоративного портала</Title>
+            <Budget>750000.0</Budget>
+
+            <Tasks>
+                <Task id="1">
+                    <Title>Проектирование базы данных</Title>
+                    <Status>Выполнено</Status>
+                </Task>
+                <Task id="2">
+                    <Title>Настройка REST API</Title>
+                    <Status>В процессе</Status>
+                </Task>
+            </Tasks>
+
+            <Milestones>
+                <Milestone id="1">
+                    <Title>Утверждение ТЗ</Title>
+                    <Deadline>2026-03-01</Deadline>
+                </Milestone>
+                <Milestone id="2">
+                    <Title>Релиз MVP</Title>
+                    <Deadline>2026-06-15</Deadline>
+                </Milestone>
+            </Milestones>
+
+            <Resources>
+                <Resource id="1">
+                    <Name>Сервер AWS EC2</Name>
+                    <Cost>45000.0</Cost>
+                </Resource>
+                <Resource id="2">
+                    <Name>Лицензия Jira</Name>
+                    <Cost>15000.0</Cost>
+                </Resource>
+            </Resources>
+
+            <Risks>
+                <Risk id="1">
+                    <Description>Увольнение ключевого разработчика</Description>
+                    <Probability>0.3</Probability>
+                </Risk>
+                <Risk id="2">
+                    <Description>Задержка поставки оборудования</Description>
+                    <Probability>0.2</Probability>
+                </Risk>
+            </Risks>
+
+            <Meetings>
+                <Meeting id="1">
+                    <Topic>Стартовый митинг с клиентом (Kick-off)</Topic>
+                    <DateTime>2026-02-10 10:00</DateTime>
+                </Meeting>
+                <Meeting id="2">
+                    <Topic>Демо спринта</Topic>
+                    <DateTime>2026-03-01 15:30</DateTime>
+                </Meeting>
+            </Meetings>
+
+            <Reports>
+                <Report id="1">
+                    <Content>Успешно завершен этап сбора требований.</Content>
+                    <CreatedDate>2026-02-15</CreatedDate>
+                </Report>
+            </Reports>
+        </Project>
+    </Projects>
+</ProjectManagementSystem>

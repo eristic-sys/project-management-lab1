@@ -1,0 +1,100 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Алексей Смирнов",
+      "position": "Senior Developer"
+    },
+    {
+      "id": 2,
+      "name": "Елена Васильева",
+      "position": "Project Manager"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "TechCorp LLC",
+      "company": "ООО ТехКорп"
+    },
+    {
+      "id": 2,
+      "name": "Global Solutions",
+      "company": "АО Глобал Солюшнс"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": 101,
+      "title": "Разработка корпоративного портала",
+      "budget": 750000.0,
+      "tasks": [
+        {
+          "task_id": 1,
+          "title": "Проектирование базы данных",
+          "status": "Выполнено"
+        },
+        {
+          "task_id": 2,
+          "title": "Настройка REST API",
+          "status": "В процессе"
+        }
+      ],
+      "milestones": [
+        {
+          "milestone_id": 1,
+          "title": "Утверждение ТЗ",
+          "deadline": "2026-03-01"
+        },
+        {
+          "milestone_id": 2,
+          "title": "Релиз MVP",
+          "deadline": "2026-06-15"
+        }
+      ],
+      "resources": [
+        {
+          "resource_id": 1,
+          "name": "Сервер AWS EC2",
+          "cost": 45000.0
+        },
+        {
+          "resource_id": 2,
+          "name": "Лицензия Jira",
+          "cost": 15000.0
+        }
+      ],
+      "risks": [
+        {
+          "risk_id": 1,
+          "description": "Увольнение ключевого разработчика",
+          "probability": 0.3
+        },
+        {
+          "risk_id": 2,
+          "description": "Задержка поставки оборудования",
+          "probability": 0.2
+        }
+      ],
+      "meetings": [
+        {
+          "meeting_id": 1,
+          "topic": "Стартовый митинг с клиентом (Kick-off)",
+          "date_time": "2026-02-10 10:00"
+        },
+        {
+          "meeting_id": 2,
+          "topic": "Демо спринта",
+          "date_time": "2026-03-01 15:30"
+        }
+      ],
+      "reports": [
+        {
+          "report_id": 1,
+          "content": "Успешно завершен этап сбора требований.",
+          "created_date": "2026-02-15"
+        }
+      ]
+    }
+  ]
+}
