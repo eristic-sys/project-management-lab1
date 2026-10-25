@@ -111,19 +111,58 @@ class ConsoleApp:
     def show_all(self) -> None:
         sys = self._system
         print("\n--- СОТРУДНИКИ ---")
+        if not sys.employees:
+            print("Нет сотрудников.")
         for e in sys.employees:
             print(f"- ID: {e.id}, Имя: {e.name}, Должность: {e.position}")
 
         print("\n--- КЛИЕНТЫ ---")
+        if not sys.clients:
+            print("Нет клиентов.")
         for c in sys.clients:
-            print(f"- ID: {c.id}, Компания: {c.company}")
+            print(f"- ID: {c.id}, Имя: {c.name}, Компания: {c.company}")
 
         print("\n--- ПРОЕКТЫ ---")
         if not sys.projects:
             print("Нет проектов.")
         for p in sys.projects:
             print(f"\n[Проект #{p.project_id}] {p.title} (Бюджет: {p.budget})")
-            print(f"  Задач: {len(p.tasks)}, Этапов: {len(p.milestones)}, Ресурсов: {len(p.resources)}")
+
+            print(f"  Задачи:")
+            if not p.tasks:
+                print("    Нет задач.")
+            for t in p.tasks:
+                print(f"    - [Статус: {t.status}] Задача #{t.task_id}: {t.title}")
+
+            print(f"  Этапы (Milestones):")
+            if not p.milestones:
+                print("    Нет этапов.")
+            for m in p.milestones:
+                print(f"    - Этап #{m.milestone_id}: {m.title} (Дедлайн: {m.deadline})")
+
+            print(f"  Ресурсы:")
+            if not p.resources:
+                print("    Нет ресурсов.")
+            for r in p.resources:
+                print(f"    - Ресурс #{r.resource_id}: {r.name} (Стоимость: {r.cost})")
+
+            print(f"  Риски:")
+            if not p.risks:
+                print("    Нет рисков.")
+            for rk in p.risks:
+                print(f"    - Риск #{rk.risk_id}: {rk.description} (Вероятность: {rk.probability})")
+
+            print(f"  Встречи:")
+            if not p.meetings:
+                print("    Нет встреч.")
+            for mt in p.meetings:
+                print(f"    - Встреча #{mt.meeting_id}: {mt.topic} (Дата/время: {mt.date_time})")
+
+            print(f"  Отчеты:")
+            if not p.reports:
+                print("    Нет отчетов.")
+            for rp in p.reports:
+                print(f"    - Отчет #{rp.report_id}: {rp.content} (Дата: {rp.created_date})")
 
     def update_project(self) -> None:
         self._system.update_project(ask_int("ID проекта: "), ask_text("Новое название: "), ask_float("Новый бюджет: "))
@@ -169,6 +208,7 @@ class ConsoleApp:
                     break
                 if choice not in self._menu:
                     print("Нет такого пункта меню.")
+                    input("\nНажмите Enter, чтобы продолжить...")
                     continue
 
                 try:
@@ -177,6 +217,8 @@ class ConsoleApp:
                     print(f"[Ошибка]: {error}")
                 except Exception as ex:
                     print(f"[Непредвиденная ошибка]: {ex}")
+
+                input("\nНажмите Enter, чтобы продолжить...")
         except (EOFError, KeyboardInterrupt):
             print()
         print("До свидания!")
